@@ -2,6 +2,8 @@
 
 An intuitive drag-and-drop event planner for organizing activities across multiple days.
 
+**[Live demo](https://r-erd.github.io/planer/)**
+
 ## Features
 
 - **Drag-and-drop scheduling** — place events onto a time grid across any number of day columns
