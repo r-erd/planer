@@ -1,43 +1,59 @@
-# Svelte + Vite
+# Weekend Planner
 
-This template should help get you started developing with Svelte in Vite.
+An intuitive drag-and-drop event planner for organizing activities across multiple days.
 
-## Recommended IDE Setup
+## Features
 
-[VS Code](https://code.visualstudio.com/) + [Svelte](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode).
+- **Drag-and-drop scheduling** — place events onto a time grid across any number of day columns
+- **Event editing** — double-click an event to rename it
+- **Resize events** — drag the bottom edge to adjust duration
+- **Color coding** — right-click an event to pick from 11 colors
+- **Context menu** — right-click to edit color, duplicate, or delete events
+- **Staging area** — hold unscheduled events until you're ready to place them
+- **Overlap detection** — visual indicator for conflicting events
+- **Current time indicator** — live marker on today's column
+- **Configurable time range** — set custom start and end hours in settings
+- **Export to ICS** — download events as an iCalendar file to import into any calendar app
+- **Persistent storage** — events are saved to `localStorage` automatically
 
-## Need an official Svelte framework?
+## Getting Started
 
-Check out [SvelteKit](https://github.com/sveltejs/kit#readme), which is also powered by Vite. Deploy anywhere with its serverless-first approach and adapt to various platforms, with out of the box support for TypeScript, SCSS, and Less, and easily-added support for mdsvex, GraphQL, PostCSS, Tailwind CSS, and more.
+**Prerequisites:** Node.js 18+
 
-## Technical considerations
-
-**Why use this over SvelteKit?**
-
-- It brings its own routing solution which might not be preferable for some users.
-- It is first and foremost a framework that just happens to use Vite under the hood, not a Vite app.
-
-This template contains as little as possible to get started with Vite + Svelte, while taking into account the developer experience with regards to HMR and intellisense. It demonstrates capabilities on par with the other `create-vite` templates and is a good starting point for beginners dipping their toes into a Vite + Svelte project.
-
-Should you later need the extended capabilities and extensibility provided by SvelteKit, the template has been structured similarly to SvelteKit so that it is easy to migrate.
-
-**Why include `.vscode/extensions.json`?**
-
-Other templates indirectly recommend extensions via the README, but this file allows VS Code to prompt the user to install the recommended extension upon opening the project.
-
-**Why enable `checkJs` in the JS template?**
-
-It is likely that most cases of changing variable types in runtime are likely to be accidental, rather than deliberate. This provides advanced typechecking out of the box. Should you like to take advantage of the dynamically-typed nature of JavaScript, it is trivial to change the configuration.
-
-**Why is HMR not preserving my local component state?**
-
-HMR state preservation comes with a number of gotchas! It has been disabled by default in both `svelte-hmr` and `@sveltejs/vite-plugin-svelte` due to its often surprising behavior. You can read the details [here](https://github.com/sveltejs/svelte-hmr/tree/master/packages/svelte-hmr#preservation-of-local-state).
-
-If you have state that's important to retain within a component, consider creating an external store which would not be replaced by HMR.
-
-```js
-// store.js
-// An extremely simple external store
-import { writable } from 'svelte/store'
-export default writable(0)
+```bash
+npm install
+npm run dev
 ```
+
+Then open `http://localhost:5173` in your browser.
+
+### Build for production
+
+```bash
+npm run build
+npm run preview   # preview the built output locally
+```
+
+The output in `dist/` is a static site — deploy it to any web host or GitHub Pages.
+
+## Usage
+
+- **Add an event** — click an empty time slot in a day column or drag from the staging area
+- **Move an event** — drag it to a new time slot or day
+- **Resize an event** — drag the handle at the bottom edge
+- **Edit title** — double-click the event
+- **Context menu** — right-click an event for color, duplicate, and delete options
+- **Settings** — click the gear icon to adjust the visible time range
+- **Export** — click the export button in the header to download an `.ics` file
+- **Reset** — restores the default example events
+
+## Tech Stack
+
+- [Svelte 5](https://svelte.dev/) — reactive component framework
+- [Vite](https://vitejs.dev/) — build tool and dev server
+
+## License
+
+This program is free software: you can redistribute it and/or modify it under the terms of the [GNU General Public License v2](LICENSE) as published by the Free Software Foundation.
+
+All direct dependencies (Svelte, Vite) are MIT-licensed and compatible with GPL-2.0.
