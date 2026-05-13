@@ -203,6 +203,10 @@
     </div>
   </div>
 
+  <footer class="app-footer">
+    <a href="/planer/privacy.html">Privacy</a>
+  </footer>
+
   {#if contextMenu}
     <ContextMenu
       x={contextMenu.x}
@@ -292,5 +296,24 @@
     background: var(--border-subtle);
     border-radius: var(--radius-lg);
     overflow: hidden;
+  }
+
+  .app-footer {
+    flex-shrink: 0;
+    padding: 6px 16px;
+    text-align: right;
+    font-size: 11px;
+    border-top: 1px solid var(--border);
+    background: var(--bg-surface);
+  }
+
+  .app-footer a {
+    color: var(--text-muted);
+    text-decoration: none;
+  }
+
+  .app-footer a:hover {
+    color: var(--text);
+    text-decoration: underline;
   }
 </style>
