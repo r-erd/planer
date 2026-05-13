@@ -56,6 +56,6 @@ The output in `dist/` is a static site — deploy it to any web host or GitHub P
 
 ## License
 
-This program is free software: you can redistribute it and/or modify it under the terms of the [GNU General Public License v2](LICENSE) as published by the Free Software Foundation.
+This program is free software: you can redistribute it and/or modify it under the terms of the [GNU General Public License v3](LICENSE) as published by the Free Software Foundation.
 
-All direct dependencies (Svelte, Vite) are MIT-licensed and compatible with GPL-2.0.
+All direct dependencies (Svelte, Vite) are MIT-licensed and compatible with GPL-3.0.

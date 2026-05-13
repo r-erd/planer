@@ -2,13 +2,13 @@
 
 ## License
 
-This project is licensed under the **GNU General Public License v2.0** (GPL-2.0).
+This project is licensed under the **GNU General Public License v3.0** (GPL-3.0).
 See the [`LICENSE`](LICENSE) file for the full license text.
 
 ## Dependency Audit
 
 All direct dependencies used in the production build are compatible
-with GPL-2.0:
+with GPL-3.0:
 
 | Package | License | Notes |
 |---------|---------|-------|
@@ -21,7 +21,7 @@ Build-time dependencies carrying the Apache-2.0 license (`aria-query`,
 and do not appear in the distributed application bundle.
 
 The complete transitive dependency tree includes packages under MIT,
-ISC, BSD-3-Clause, and MPL-2.0 licenses — all compatible with GPL-2.0.
+ISC, BSD-3-Clause, and MPL-2.0 licenses — all compatible with GPL-3.0.
 Notable transitive dependencies:
 
 | Package | License | Notes |
@@ -74,7 +74,7 @@ course of business).
 
 Weekend Planner is **not a commercial service**:
 
-- It is a free, open-source personal tool distributed under GPL-2.0.
+- It is a free, open-source personal tool distributed under GPL-3.0.
 - There is no payment, no advertising, no revenue model, and no business activity.
 - It is not operated in the course of a trade, business, or profession.
 - There is no journalistic or editorial content.
@@ -85,4 +85,4 @@ requirement under § 5 TMG does not apply.
 ## Contributing
 
 By contributing to this project, you agree that your contributions will be
-licensed under the same GPL-2.0 license.
+licensed under the same GPL-3.0 license.
