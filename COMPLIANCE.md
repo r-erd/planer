@@ -1,40 +1,88 @@
-# Compliance Notes
+# Compliance & Legal
 
 ## License
 
-This project is published under the **GNU General Public License v2** (GPL-2.0). In short:
+This project is licensed under the **GNU General Public License v2.0** (GPL-2.0).
+See the [`LICENSE`](LICENSE) file for the full license text.
 
-- You may use, copy, modify, and distribute this software freely.
-- Any modified version you distribute must also be licensed under GPL-2.0 and include its source code.
-- The full license text is in [LICENSE](LICENSE).
+## Dependency Audit
 
-All dependencies are MIT-licensed, which is compatible with GPL-2.0.
+All direct dependencies used in the production build are compatible
+with GPL-2.0:
+
+| Package | License | Notes |
+|---------|---------|-------|
+| `svelte` | MIT | Runtime framework |
+| `@sveltejs/vite-plugin-svelte` | MIT | Build-time plugin |
+| `vite` | MIT | Build tool |
+
+Build-time dependencies carrying the Apache-2.0 license (`aria-query`,
+`axobject-query`, `detect-libc`) are used only during compilation
+and do not appear in the distributed application bundle.
+
+The complete transitive dependency tree includes packages under MIT,
+ISC, BSD-3-Clause, and MPL-2.0 licenses — all compatible with GPL-2.0.
+Notable transitive dependencies:
+
+| Package | License | Notes |
+|---------|---------|-------|
+| `lightningcss` | MPL-2.0 | CSS processing (via Vite) |
+| `postcss` | MIT | CSS processing |
+| `rolldown` | MIT | Bundler (via Vite) |
+| `magic-string` | MIT | Source manipulation |
+| `nanoid` | MIT | ID generation |
+| `picocolors` | ISC | Terminal colors (dev-only) |
+| `source-map-js` | BSD-3-Clause | Source maps |
+| `clsx` | MIT | Runtime utility |
+| `esrap` | MIT | Svelte compiler |
+| `acorn` | MIT | JavaScript parser |
+| `deepmerge` | MIT | Object merging |
+
+The built output is plain HTML, CSS, and JavaScript with **no bundled
+third-party runtime**.
 
 ## Privacy
 
-This app collects **no personal data**. Specifically:
+Weekend Planner is designed with **privacy-by-default** principles:
 
-- No analytics, tracking, or telemetry of any kind.
-- No cookies.
-- Events you create are stored in your browser's `localStorage` and never leave your device.
-- No external network requests are made at runtime — all fonts are system fonts.
+- **No server:** The application is a fully static client-side build. There is no backend.
+- **No cookies:** We do not use cookies or any similar tracking mechanisms.
+- **No analytics:** No third-party analytics, telemetry, or tracking scripts are included.
+- **No external data transmission:** Your planner data never leaves your device.
+- **Local storage only:** Events, day names, and time range settings are stored in your browser's `localStorage`.
+- **You own your data:** You can export your schedule as an `.ics` file at any time, or clear it completely via the reset function.
+- **No account required:** There is no registration, login, or personal information collected.
 
-GitHub Pages (the hosting platform) may log IP addresses as part of normal server operation. That is governed by [GitHub's Privacy Policy](https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement), not this project.
+### Data Stored in localStorage
 
-Because no personal data is processed by this app, no privacy policy is required under GDPR for the application itself.
+| Key | Purpose | Retention |
+|-----|---------|-----------|
+| `weekend-planner-state` | Events, day names, start/end hour settings | Until manually reset or cleared |
 
-## Impressum
+To delete all data, use your browser's developer tools or site data clearing features.
 
-No Impressum is required. This is a non-commercial, private open-source project with no editorial content, no commercial intent, and no monetization.
+## Attribution
 
-If you ever add advertising, affiliate links, or turn this into a commercial service, an Impressum (and likely a privacy policy) would become mandatory under German law (§ 5 DDG).
+- Icons embedded in the application are simple geometric SVG paths.
+- The application uses system fonts — no external font CDN requests are made.
 
-## Dependency Licenses
+## No Impressum Required
 
-| Package | Version | License |
-|---------|---------|---------|
-| svelte | 5.x | MIT |
-| vite | 8.x | MIT |
-| @sveltejs/vite-plugin-svelte | 7.x | MIT |
+Under German law (Telemediengesetz § 5), an **Impressum** is required for
+*geschäftsmäßige Online-Dienste* (commercial online services offered in the
+course of business).
 
-All dependencies are build-time only and are not distributed with the application. The built output is plain HTML, CSS, and JavaScript with no bundled third-party runtime.
+Weekend Planner is **not a commercial service**:
+
+- It is a free, open-source personal tool distributed under GPL-2.0.
+- There is no payment, no advertising, no revenue model, and no business activity.
+- It is not operated in the course of a trade, business, or profession.
+- There is no journalistic or editorial content.
+
+Because the application is **non-commercial and non-business**, the Impressum
+requirement under § 5 TMG does not apply.
+
+## Contributing
+
+By contributing to this project, you agree that your contributions will be
+licensed under the same GPL-2.0 license.
