@@ -16,6 +16,7 @@
       </svg>
     </div>
     <h1>Weekend Planner</h1>
+    <a href="/planer/privacy.html" class="privacy-link">Privacy</a>
   </div>
   <div class="header-actions">
     <button class="btn btn-ghost" onclick={onAddDay}>
@@ -65,6 +66,18 @@
     font-weight: 600;
     letter-spacing: -0.02em;
     color: var(--text);
+  }
+
+  .privacy-link {
+    font-size: 12px;
+    color: var(--text-muted);
+    text-decoration: none;
+    margin-left: 4px;
+  }
+
+  .privacy-link:hover {
+    color: var(--text);
+    text-decoration: underline;
   }
 
   .header-actions {
